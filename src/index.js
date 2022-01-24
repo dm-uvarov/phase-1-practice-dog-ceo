@@ -69,12 +69,11 @@ function addBreadsToDom(breedsObj) {
     }
 
     let dropdownM = document.querySelector("#breed-dropdown");
-    dropdownM.addEventListener('change', ()=>{
-        if(dropdownM.option === "a"){
-           
+    dropdownM.addEventListener('change', (e)=>{
+        console.log(e.target.value)   
         }
         
-    })
+    )
 }
 
 
