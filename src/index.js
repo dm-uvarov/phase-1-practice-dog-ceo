@@ -41,7 +41,30 @@ function addImagestoDom(objLinks) {
 
 }
 
+function hideElements(ArrayOfElements) {
+    ArrayOfElements.forEach(item => item.style.display = "none");
+    
+}
 
+function showElements(ArrayOfElements) {
+    ArrayOfElements.forEach(item => item.style.display = "block");
+    
+}
+
+function testCondition(ele, condition){
+    let 
+    return 
+}
+
+function filterElements(criteria) {
+    let arrElements = document.querySelectorAll(`.lib`);
+    let pattern = `^${criteria}`;
+    let myRegExpession = new RegExp(pattern);
+    
+    let filteredArr = arrElements.filter(item => myRegExpession.test(item.text) 
+    )
+    return filteredArr;
+}
 
 
 function addBreadsToDom(breedsObj) {
@@ -63,17 +86,29 @@ function addBreadsToDom(breedsObj) {
 
     })
 
-    function hidelist(){
-        document.querySelectorAll(".lib").style(display= "none");
-
-    }
+    let listBreedLi = document.querySelectorAll(`.lib`);
 
     let dropdownM = document.querySelector("#breed-dropdown");
     dropdownM.addEventListener('change', (e)=>{
-        console.log(e.target.value)   
+        console.log(e.target.value);
+
+        hideElements(listBreedLi);
+
+        if(e.target.value ==="all" ){
+            showElements(listBreedLi);
+        } else{
+            let arrF =  filterElements(e.target.value);
+            showElements(arrF);
+                
+        }
+
+
         }
         
     )
+
+
+
 }
 
 
